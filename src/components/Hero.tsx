@@ -1,5 +1,5 @@
 import { portfolioData } from "@/data/portfolio";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 
 export function Hero() {
@@ -38,6 +38,15 @@ export function Hero() {
           >
             Explore Projects
             <ArrowRight className="w-4 h-4" />
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-medium text-sm transition-all hover:scale-[1.02]"
+          >
+            <Download className="w-4 h-4" />
+            Resume
           </a>
           <a
             href="#contact"
