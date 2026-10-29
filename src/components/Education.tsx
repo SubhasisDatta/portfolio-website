@@ -1,46 +1,34 @@
 import { portfolioData } from "@/data/portfolio";
-import { GraduationCap, BookOpen } from "lucide-react";
 
 export function EducationSection() {
   const { education } = portfolioData;
 
   return (
-    <section id="education" className="py-16 md:py-24 border-b border-zinc-900">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-3">
-            <GraduationCap className="w-3.5 h-3.5" />
-            Academic Foundations
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
-            Education &amp; Advanced Studies
-          </h2>
-        </div>
+    <section id="education" className="py-20 border-b border-[#27272a] bg-[#101114]">
+      <div className="max-w-5xl mx-auto px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
+          Education &amp; Advanced Studies
+        </h2>
+        <p className="text-sm text-[#a1a1aa] mb-12">
+          Academic foundations in engineering, operations research, systems analysis, and artificial intelligence.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {education.map((item, index) => (
-            <div
-              key={index}
-              className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 transition-colors flex items-start gap-4"
-            >
-              <div className="p-2.5 rounded-xl bg-indigo-950/60 border border-indigo-800/40 text-indigo-400 shrink-0 mt-0.5">
-                <BookOpen className="w-4 h-4" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {education.map((edu, idx) => (
+            <div key={idx} className="p-6 rounded-lg bg-[#141517] border border-[#27272a]">
+              <div className="flex items-baseline justify-between gap-2 mb-2">
+                <h3 className="text-base font-semibold text-white">
+                  {edu.institution}
+                </h3>
+                {edu.period && (
+                  <span className="text-xs font-mono text-emerald-400">
+                    {edu.period}
+                  </span>
+                )}
               </div>
-              <div className="flex-1">
-                <div className="flex items-baseline justify-between gap-2">
-                  <h3 className="font-semibold text-white text-sm">
-                    {item.institution}
-                  </h3>
-                  {item.period && (
-                    <span className="text-[11px] font-mono text-indigo-400 shrink-0">
-                      {item.period}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-zinc-300 mt-1 leading-relaxed">
-                  {item.degree}
-                </p>
-              </div>
+              <p className="text-sm text-[#a1a1aa] leading-relaxed">
+                {edu.degree}
+              </p>
             </div>
           ))}
         </div>

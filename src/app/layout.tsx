@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Subhasis Datta | Software Engineer & Builder",
-  description: "Modern portfolio website showcasing engineering projects, technical stack, and software development experience.",
-  keywords: ["Portfolio", "Software Engineer", "Full Stack Developer", "Next.js", "React", "TypeScript", "Tailwind CSS"],
+  title: "Subhasis Datta — Chief Data Scientist & AI Officer",
+  description:
+    "Executive portfolio of Subhasis Datta. Over 25 years leading Federal AI/ML, Agentic AI, and Big Data programs across IRS, USCIS, USAF, and SEC.",
   authors: [{ name: "Subhasis Datta" }],
   openGraph: {
-    title: "Subhasis Datta | Portfolio",
-    description: "Software Engineer & Builder — crafting fast, responsive web applications.",
+    title: "Subhasis Datta — Chief Data Scientist & AI Officer",
+    description: "Federal AI/ML, Agentic AI, and Mission-Critical Systems.",
     type: "website",
   },
 };
@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <html lang="en" className="scroll-smooth">
+      <body className="min-h-screen flex flex-col bg-[#0c0d0e] text-[#f4f4f5]">
         {children}
       </body>
     </html>

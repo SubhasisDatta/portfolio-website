@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { portfolioData } from "@/data/portfolio";
-import { Mail, Send, CheckCircle2, MapPin, Shield } from "lucide-react";
-import { LinkedinIcon, GithubIcon, XIcon } from "@/components/Icons";
 
 export function Contact() {
   const { personal } = portfolioData;
@@ -21,117 +19,93 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-zinc-950">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-3">
-            <Mail className="w-3.5 h-3.5" />
-            Connect
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
-            Get In Touch
-          </h2>
-          <p className="text-sm text-zinc-400 max-w-xl mx-auto mt-3">
-            Open to consulting, executive AI advisement, and mission-critical program leadership.
-          </p>
-        </div>
+    <section id="contact" className="py-20 bg-[#0c0d0e]">
+      <div className="max-w-5xl mx-auto px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
+          Get In Touch
+        </h2>
+        <p className="text-sm text-[#a1a1aa] mb-12">
+          Open to federal executive advisory, program leadership, and technical collaboration.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
-          {/* Direct Details Sidebar */}
-          <div className="md:col-span-2 space-y-6 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80">
-            <h3 className="text-base font-semibold text-white">Direct Channels</h3>
-
-            <div className="space-y-4 text-xs sm:text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
+          {/* Direct Info */}
+          <div className="md:col-span-2 space-y-6">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-[#71717a] font-semibold mb-1">
+                Direct Email
+              </div>
               <a
                 href={`mailto:${personal.email}`}
-                className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors group"
+                className="text-base font-mono text-emerald-400 hover:underline"
               >
-                <div className="p-2.5 rounded-xl bg-zinc-800 text-indigo-400 group-hover:bg-indigo-600/20">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[11px] text-zinc-300">Email Directly</div>
-                  <div className="font-mono text-zinc-200">{personal.email}</div>
-                </div>
+                {personal.email}
               </a>
-
-              <div className="flex items-center gap-3 text-zinc-300">
-                <div className="p-2.5 rounded-xl bg-zinc-800 text-indigo-400">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[11px] text-zinc-300">Location</div>
-                  <div className="text-zinc-200">{personal.location}</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 text-zinc-300">
-                <div className="p-2.5 rounded-xl bg-zinc-800 text-emerald-400">
-                  <Shield className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[11px] text-zinc-300">Clearances</div>
-                  <div className="text-xs text-zinc-200">US Citizen (DoD / DHS / Federal)</div>
-                </div>
-              </div>
             </div>
 
-            <div className="pt-4 border-t border-zinc-800/80">
-              <div className="text-xs text-zinc-300 mb-3">Professional Profiles</div>
-              <div className="flex gap-2 text-zinc-400">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-[#71717a] font-semibold mb-1">
+                Location
+              </div>
+              <p className="text-sm text-white">
+                {personal.location}
+              </p>
+            </div>
+
+            <div>
+              <div className="text-xs uppercase tracking-wider text-[#71717a] font-semibold mb-1">
+                Profiles
+              </div>
+              <div className="flex flex-col gap-2 text-sm text-white">
                 <a
                   href={personal.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-800/60 hover:text-white hover:border-zinc-700 transition-colors"
-                  aria-label="LinkedIn"
+                  className="hover:text-emerald-400 transition-colors"
                 >
-                  <LinkedinIcon className="w-4 h-4" />
+                  LinkedIn Profile →
                 </a>
                 <a
                   href={personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-800/60 hover:text-white hover:border-zinc-700 transition-colors"
-                  aria-label="GitHub"
+                  className="hover:text-emerald-400 transition-colors"
                 >
-                  <GithubIcon className="w-4 h-4" />
+                  GitHub Profile →
                 </a>
                 <a
                   href={personal.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-800/60 hover:text-white hover:border-zinc-700 transition-colors"
-                  aria-label="X / Twitter"
+                  className="hover:text-emerald-400 transition-colors"
                 >
-                  <XIcon className="w-4 h-4" />
+                  X / Twitter Profile →
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="md:col-span-3 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80">
+          {/* Form */}
+          <div className="md:col-span-3 p-6 rounded-lg bg-[#141517] border border-[#27272a]">
             {submitted ? (
-              <div className="text-center py-12 space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
-                <h4 className="text-lg font-semibold text-white">Message Prepared!</h4>
-                <p className="text-xs text-zinc-400 max-w-xs mx-auto">
-                  Your default email client has been opened with your inquiry addressed to {personal.email}.
+              <div className="py-8 text-center space-y-2">
+                <h3 className="text-base font-semibold text-white">Message Ready</h3>
+                <p className="text-xs text-[#a1a1aa]">
+                  Your mail app was opened to send this directly to {personal.email}.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 text-xs text-indigo-400 hover:underline"
+                  className="text-xs text-emerald-400 hover:underline pt-4 block mx-auto"
                 >
-                  Compose another message
+                  Send another inquiry
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-medium text-zinc-300 mb-1.5">
+                    <label htmlFor="name" className="block text-xs font-medium text-[#a1a1aa] mb-1">
                       Your Name
                     </label>
                     <input
@@ -141,12 +115,11 @@ export function Contact() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Jane Doe"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full px-3 py-2 rounded bg-[#0c0d0e] border border-[#27272a] text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors"
                     />
                   </div>
-
                   <div>
-                    <label htmlFor="email" className="block text-xs font-medium text-zinc-300 mb-1.5">
+                    <label htmlFor="email" className="block text-xs font-medium text-[#a1a1aa] mb-1">
                       Your Email
                     </label>
                     <input
@@ -156,13 +129,13 @@ export function Contact() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="jane@agency.gov"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full px-3 py-2 rounded bg-[#0c0d0e] border border-[#27272a] text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-xs font-medium text-zinc-300 mb-1.5">
+                  <label htmlFor="subject" className="block text-xs font-medium text-[#a1a1aa] mb-1">
                     Subject
                   </label>
                   <input
@@ -171,13 +144,13 @@ export function Contact() {
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="AI Program Leadership / Strategic Advisory"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                    placeholder="AI Program Advisory / Technical Leadership"
+                    className="w-full px-3 py-2 rounded bg-[#0c0d0e] border border-[#27272a] text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-medium text-zinc-300 mb-1.5">
+                  <label htmlFor="message" className="block text-xs font-medium text-[#a1a1aa] mb-1">
                     Message
                   </label>
                   <textarea
@@ -187,16 +160,15 @@ export function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Briefly describe your agency or program needs..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+                    className="w-full px-3 py-2 rounded bg-[#0c0d0e] border border-[#27272a] text-sm text-white focus:outline-none focus:border-emerald-400 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-md shadow-indigo-600/20"
+                  className="w-full py-2.5 rounded bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors"
                 >
-                  <Send className="w-4 h-4" />
-                  Send Inquiry to {personal.email}
+                  Send Inquiry
                 </button>
               </form>
             )}
